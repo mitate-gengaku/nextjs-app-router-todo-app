@@ -53,6 +53,7 @@
     // tailwindcss
     "tailwindcss/enforces-shorthand": "off",
     "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/no-unnecessary-arbitrary-value": "off",
 
     // imports
     "import/order": [
