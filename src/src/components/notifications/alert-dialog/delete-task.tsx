@@ -1,5 +1,5 @@
 import { GeistSans } from "geist/font/sans";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import {
   AlertDialog,
@@ -15,7 +15,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 
-export const DeleteTaskAlert = ({ children }: { children: ReactNode }) => (
+export const DeleteTaskAlert = ({
+  children,
+  onClick,
+}: {
+  children: ReactNode;
+  onClick: React.ComponentProps<"button">["onClick"];
+}) => (
   <AlertDialog>
     <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
     <AlertDialogContent className={cn(GeistSans.className)}>
@@ -29,6 +35,7 @@ export const DeleteTaskAlert = ({ children }: { children: ReactNode }) => (
         <AlertDialogCancel>キャンセル</AlertDialogCancel>
         <AlertDialogAction
           className={cn("bg-red-500 hover:bg-red-600")}
+          onClick={onClick}
           asChild
         >
           <Button>削除する</Button>
