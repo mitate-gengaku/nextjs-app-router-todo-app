@@ -1,4 +1,4 @@
-import { GeistSans } from "geist/font/sans";
+import { Noto_Sans_JP } from "next/font/google";
 import React, { ReactNode } from "react";
 
 import {
@@ -12,8 +12,15 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
+
+
+export const NotoSansJP = Noto_Sans_JP({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--noto-sans-jp",
+});
 
 export const DeleteTaskAlert = ({
   children,
@@ -24,7 +31,7 @@ export const DeleteTaskAlert = ({
 }) => (
   <AlertDialog>
     <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
-    <AlertDialogContent className={cn(GeistSans.className)}>
+    <AlertDialogContent className={cn(NotoSansJP.className)}>
       <AlertDialogHeader>
         <AlertDialogTitle>タスクを削除しますか？</AlertDialogTitle>
         <AlertDialogDescription>
@@ -34,7 +41,7 @@ export const DeleteTaskAlert = ({
       <AlertDialogFooter>
         <AlertDialogCancel>キャンセル</AlertDialogCancel>
         <AlertDialogAction
-          className={cn("bg-red-500 hover:bg-red-600")}
+          className={cn(buttonVariants({ variant: "destructive" }))}
           onClick={onClick}
           asChild
         >

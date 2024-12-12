@@ -4,6 +4,7 @@ export default defineConfig({
   out: "./src/db/migrations",
   dialect: "postgresql",
   dbCredentials: {
+    ssl: false,
     host: 'db',
     user: 'root',
     password: 'password',

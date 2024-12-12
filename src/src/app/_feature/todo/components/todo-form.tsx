@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/utils/cn";
 
-
 export const TodoForm = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
 
